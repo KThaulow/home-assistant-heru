@@ -60,7 +60,7 @@ class HeruButtonSetTime(HeruButton):
         _LOGGER.debug("HeruButtonSetTime.async_press()")
 
         now = hass_now()
-        await self.coordinator.write_register(399, now.year)
+        await self.coordinator.writer_register(399, now.year)
         await self.coordinator.write_register(400, now.month)
         await self.coordinator.write_register(401, now.day)
         await self.coordinator.write_register(402, now.hour)

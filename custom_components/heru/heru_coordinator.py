@@ -57,9 +57,16 @@ class HeruCoordinator(DataUpdateCoordinator):
 
                 # 4x00001 - 4x00067
                 holding_registers_result = await self.client.read_holding_registers(
-                    0, 67, DEFAULT_SLAVE
+                    0, 66, DEFAULT_SLAVE
                 )
-                self.holding_registers = holding_registers_result.registers
+                self.holding_registers = {index: value for index, value in enumerate(holding_registers_result.registers)}
+
+                # Max 125 registers can be read in a single request, split into multiple requests
+                # 4x00400 - 4x00405
+                holding_registers_time_result = await self.client.read_holding_registers(
+                    399, 5, DEFAULT_SLAVE
+                )
+                self.holding_registers.update({index + 399: value for index, value in enumerate(holding_registers_time_result.registers)})
 
                 return
         except Exception as err:
