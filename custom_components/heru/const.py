@@ -333,57 +333,40 @@ HERU_NUMBERS = [
         "max_value": 26,
         "icon": ICON_THERMOMETER,
         "unit_of_measurement": "°C",
-    },
+    }
+]
+
+HERU_DATE_TIMES = [
     {
-        "name": "Current Year",
-        "modbus_address": "4x000400",
-        "address": 399,
-        "scale": 1,
-        "min_value": 2000,
-        "max_value": 3000,
-        "icon": ICON_CALENDAR,
-        "unit_of_measurement": "Year",
-    },
-    {
-        "name": "Current Month",
-        "modbus_address": "4x000401",
-        "address": 400,
-        "scale": 1,
-        "min_value": 1,
-        "max_value": 12,
-        "icon": ICON_CALENDAR,
-        "unit_of_measurement": "Month",
-    },
-        {
-        "name": "Current Day",
-        "modbus_address": "4x000402",
-        "address": 401,
-        "scale": 1,
-        "min_value": 1,
-        "max_value": 31,
-        "icon": ICON_CALENDAR,
-        "unit_of_measurement": "Day",
-    },
-    {
-        "name": "Current Hour",
-        "modbus_address": "4x000403",
-        "address": 402,
-        "scale": 1,
-        "min_value": 0,
-        "max_value": 23,
-        "icon": ICON_CALENDAR,
-        "unit_of_measurement": "Hour",
-    },
-    {
-        "name": "Current Minute",
-        "modbus_address": "4x000404",
-        "address": 403,
-        "scale": 1,
-        "min_value": 0,
-        "max_value": 59,
-        "icon": ICON_CALENDAR,
-        "unit_of_measurement": "Minute",
-    },
+        "name": "Date and time",
+        "dateTimes": [
+            {
+                "name": "Year",
+                "modbus_address": "4x000400",
+                "address": 399,
+            },
+            {
+                "name": "Month",
+                "modbus_address": "4x000401",
+                "address": 400,
+            },
+            {
+                "name": "Day",
+                "modbus_address": "4x000402",
+                "address": 401,
+            },
+            {
+                "name": "Hour",
+                "modbus_address": "4x000403",
+                "address": 402,
+            },
+            {
+                "name": "Minute",
+                "modbus_address": "4x000404",
+                "address": 403,
+            }
+        ]
+    }
 ]
 
 
